@@ -980,10 +980,10 @@
               </div>
               <div class="blog-item-text"> 
                 <h3>
-                <a href="#">Chemistry Article 1</a>
+                <a href="#" id = "article1title">Chemistry Article 1</a>
                 </h3>
                 <p>
-                  Description
+                  
                 </p>
                 <a href="#" class="btn btn-common btn-rm">Read More</a>
               </div>
@@ -1001,10 +1001,10 @@
               </div>
               <div class="blog-item-text"> 
                 <h3>
-                <a href="#">Chemistry Article 2</a>
+                <a href="#" id = "article2title">Chemistry Article 2</a>
                 </h3>
                 <p>
-                Description 
+                 
                 </p>
                 <a href="#" class="btn btn-common btn-rm">Read More</a>
               </div>
@@ -1022,12 +1022,10 @@
               </div>
               <div class="blog-item-text"> 
                 <h3>
-                  <a href="#">Chemistry Article 3</a>
+                  <a href="#" id = "article3title">Chemistry Article 3</a>
                 </h3>
-                <p>
-                Description 
-                </p>
-                <a href="#" class="btn btn-common btn-rm">Read More</a>
+               
+                <a href="#" class="btn btn-common btn-rm" id = "article3more">Read More</a>
               </div>
             </div>
             <!-- Blog Item Wrapper Ends-->
@@ -1108,7 +1106,29 @@
       </div> 
     </section>
     <!-- Contact Section End -->
-    
+    <script>
+      var newsLink = "https://gnews.io/api/v3/topics/science?token=1bfa6c7aeb241384c68923036eecd12c"
+      getData()
+      async function getData(){
+        const response = await fetch(newsLink)
+        const data = await response.json()
+        var threeTitle = document.getElementById("article3title")
+        var twoTitle = document.getElementById("article2title")
+        var oneTitle = document.getElementById("article1title")
+
+        var threeDescription = document.getElementById("article3description")
+        var threeMore = document.getElementById("article3more")
+
+        oneTitle.innerText = data.articles[0].title
+        twoTitle.innerText = data.articles[1].title
+        threeTitle.innerText = data.articles[2].title
+
+        // threeMore.innerHTML = data.articles[2].url
+        // threeDescription.innerText = data.articles[2].description
+
+
+      }
+    </script>
     <!-- Copyright Section Start -->
     <div class="copyright">
       <div class="container">
@@ -1162,6 +1182,6 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/form-validator.min.js"></script>
     <script src="assets/js/contact-form-script.min.js"></script>
-      
+    
   </body>
 </html>
