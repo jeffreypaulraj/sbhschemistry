@@ -28,7 +28,29 @@
 
   </head>
   <body>
-  
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBZq2FmAtMEdv_qMxCxHzOKxOG_IkSf2xY",
+      authDomain: "sbhs-chemistry.firebaseapp.com",
+      databaseURL: "https://sbhs-chemistry.firebaseio.com",
+      projectId: "sbhs-chemistry",
+      storageBucket: "sbhs-chemistry.appspot.com",
+      messagingSenderId: "380068295223",
+      appId: "1:380068295223:web:6b6d4944d21cb03779c5b2",
+      measurementId: "G-VVP37FQ6BR"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    </script>
     <!-- Header Area wrapper Starts -->
     <header id="header-wrap">
       <!-- Navbar Start -->
